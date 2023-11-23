@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./Style/styleRegister.css">
+</head>
+<body>
+    <div class="logo-space d-flex align-items-center justify-content-center">
+        <img src="./Assets/logo-perusahaan.jpg" alt="logo-perusahaan" width="130" height="48">
+        <h3 class="ml-3">Welcome to Windira Tour</h3>
+    </div>
+    <div class="container register-container bg-white rounded p-5" style="max-width: 500px; max-height: 600px; margin: 125px auto;">
+            <h2 class="text-center mb-5">Register</h2>
+            <h6 class="mt-4 text-center" style="font-weight: lighter;">Use a minimum of 10 characters, including letters, lowercase letters, and numbers.</h6>
+            <label for="password" style="font-weight: 600;">Password</label>
+            <div class="input-box">
+                <input type="password" id="newpassword" class="form-control" required>
+                <img src="./Assets/eye-open.png" id="eyeopen">
+            </div>
+            <label for="confpassword" style="font-weight: 600;">Confirm Password</label>
+            <div class="input-box">
+                <input type="password" id="newpassword" class="form-control" required>
+                <img src="./Assets/eye-open.png" id="eye-close">
+            </div>
+            <button type="next" class="btn btn-success btn-block">Next</button>
+        <div class="mt-4 text-center">
+            <p>By creating an account, you agree with our <a href="#" class="text-success">Terms and Conditions</a> and <a href="#" class="text-success">Privacy Statement</a></p>
+        </div>
+    </div>
+</body>
+</html>
