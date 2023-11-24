@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmasi Reservasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./Style/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-2 border-0">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <a href="afterLogin.html" class="d-inline-flex link-body-emphasis text-decoration-none">
+          <img class="bi bg-transparent" width="130" height="48" role="img"src="./Assets/logo-perusahaan.jpg" alt="logo-windira-tour">
+        </a>
+      </div>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="afterLogin.html#home" class="nav-link px-3 link-secondary">Home</a></li>
+        <li><a href="afterLogin.html#service" class="nav-link px-3">Services</a></li>
+        <li><a href="afterLogin.html#contact" class="nav-link px-3">Contact</a></li>
+        <li><a href="myOrder.html" class="nav-link px-3">My Order</a></li>
+      </ul>
+
+      <div class="col-md-3 text-end">
+        <div class="dropdown">
+          <a class="btn dropdown-toggle border-0" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <img class="img-profile" src="./Assets/person-icon.jpg" alt="Profile Picture">
+          </a>    
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item border-2 bg-light text-dark" href="#"><svg class="mr-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+              </svg><span class="ms-3">My Profile</span></a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item border-2 bg-light text-dark" href="myOrder.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journals" viewBox="0 0 16 16">
+                <path d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2 2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v9a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2z"/>
+                <path d="M1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 2.5v.5H.5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1H2v-.5a.5.5 0 0 0-1 0z"/>
+              </svg><span class="ms-3">My Order</span></a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item border-2 bg-light text-dark" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+              </svg><span class="m-3">Log Out</span></a></li>
+          </ul>
+
+        </div>
+      </div>
+    </header>
+  </div> 
+
+  <div class="container-fluid p-4" style="background-image: url('./Assets/background\ web.jpg'); background-size: cover; background-blend-mode: overlay; background-color: rgba(255, 255, 255, 0.5);">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+            <form>
+              <div class="form-group row mb-4">
+                <label for="fullName" class="col-sm-12 col-md-4 col-form-label">Nama Lengkap</label>
+                <div class="col-sm-12 col-md-8">
+                  <input type="text" class="form-control" id="fullName" readonly>
+                </div>
+              </div>
+              <div class="form-group row mb-4">
+                <label for="email" class="col-sm-12 col-md-4 col-form-label">Email</label>
+                <div class="col-sm-12 col-md-8">
+                  <input type="email" class="form-control" id="email" readonly>
+                </div>
+              </div>
+              <div class="form-group row mb-4">
+                <label for="serviceName" class="col-sm-12 col-md-4 col-form-label">Jenis Layanan</label>
+                <div class="col-sm-12 col-md-8">
+                  <select class="form-control" id="serviceName" disabled>
+                    <option>Pesawat</option>
+                    <option>Hotel</option>
+                    <option>Kereta Api</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row mb-4">
+                <label for="serviceProvider" class="col-sm-12 col-md-4 col-form-label">Nama Layanan</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="serviceProvider" readonly>
+                </div>
+              </div>
+              <div class="form-group row mb-4">
+                <label for="departureDate" class="col-sm-12 col-md-4 col-form-label">Tanggal dan Waktu Keberangkatan/Check-in</label>
+                <div class="col-sm-8">
+                  <input type="datetime-local" class="form-control" id="departureDate" readonly>
+                </div>
+              </div>
+              <div class="form-group row mb-4">
+                <label for="arrivalDate" class="col-sm-12 col-md-4 col-form-label">Tanggal dan Waktu Kedatangan/Check-out</label>
+                <div class="col-sm-8">
+                  <input type="datetime-local" class="form-control" id="arrivalDate" readonly>
+                </div>
+              </div>
+              <div class="form-group row mb-4">
+                <label for="location" class="col-sm-12 col-md-4 col-form-label">Lokasi Keberangkatan dan Tujuan/Alamat Hotel</label>
+                <div class="col-sm-8">
+                  <input type="text" class="form-control" id="location" readonly>
+                </div>
+              </div>
+              <div class="form-group row mb-4">
+                <label for="seatDetails" class="col-sm-12 col-md-4 col-form-label">Detail Tempat Duduk/Jenis Kamar</label>
+                <div class="col-sm-8">
+                  <textarea class="form-control" id="seatDetails" rows="5" readonly></textarea>
+                </div>
+              </div>
+              <div class="form-group row mb-4">
+                <label for="bookingCode" class="col-sm-12 col-md-4 col-form-label">Kode Booking</label>
+                <div class="col-sm-8">
+                  <textarea class="form-control" id="bookingCode" rows="5" readonly></textarea>
+                </div>
+              </div>
+              <div class="form-group row mb-4">
+                <label for="guestCount" class="col-sm-12 col-md-4 col-form-label">Jumlah Tamu</label>
+                <div class="col-sm-8">
+                  <input type="number" class="form-control" id="guestCount" readonly>
+                </div>
+              </div>
+              <div class="form-group row mb-4">
+                <label for="guestList" class="col-sm-12 col-md-4 col-form-label">Daftar Nama Tamu</label>
+                <div class="col-sm-8">
+                  <textarea class="form-control" id="guestList" rows="3" readonly></textarea>
+                </div>
+              </div>
+              <div class="form-group row mb-4">
+                <label for="totalCost" class="col-sm-12 col-md-4 col-form-label">Total Biaya</label>
+                <div class="col-sm-8">
+                  <input type="number" class="form-control" id="totalCost" readonly>
+                </div>
+              </div>
+              <div class="form-group row justify-content-end mb-4">
+                  <div class="col-sm-12 d-flex justify-content-end">
+                      <button type="submit" class="btn btn-success w-auto px-5">Bayar</button>
+                  </div>
+              </div>
+            </form>
+        </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
