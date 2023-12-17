@@ -32,17 +32,19 @@ Route::post('/register2', [authController::class, 'processStep2']);
 Route::get('/register3', [authController::class, 'register3']);
 Route::post('/register3', [authController::class, 'processStep3']);
 // reservasi option
-Route::get('/reservasi-pesawat', [userController::class, 'reservasi_pesawat']);
-Route::post('/reservasi-pesawat', [userController::class, 'plane_reservations']);
-Route::get('/reservasi-kereta', [userController::class, 'reservasi_kereta']);
-Route::post('/reservasi-kereta', [userController::class, 'train_reservations']);
-Route::get('/reservasi-hotel', [userController::class, 'reservasi_hotel']);
-Route::post('/reservasi-hotel', [userController::class, 'hotel_reservations']);
+Route::get('/reservasi-pesawat', [userController::class, 'reservasi_pesawat'])->middleware('auth:web');
+Route::post('/reservasi-pesawat', [userController::class, 'plane_reservations'])->middleware('auth:web');
+Route::get('/reservasi-kereta', [userController::class, 'reservasi_kereta'])->middleware('auth:web');
+Route::post('/reservasi-kereta', [userController::class, 'train_reservations'])->middleware('auth:web');
+Route::get('/reservasi-hotel', [userController::class, 'reservasi_hotel'])->middleware('auth:web');
+Route::post('/reservasi-hotel', [userController::class, 'hotel_reservations'])->middleware('auth:web');
 Route::get('/my-order', [userController::class, 'myOrder'])->middleware('auth:web');
 Route::get('/pembayaran/{id}', [userController::class, 'pembayaran'])->middleware('auth:web');
 Route::post('/pembayaran/{id}', [userController::class, 'payment'])->middleware('auth:web');
 Route::get('/tiket/{id}', [userController::class, 'tiket'])->middleware('auth:web');
 
+Route::get('/profile', [userController::class, 'profile'])->middleware('auth:web');
+Route::put('/profile/edit', [userController::class, 'editProfile'])->middleware('auth:web');
 
 
 Route::get('/konfirmasi-reservasi', [adminController::class, 'konfirmasi_reservasi'])->middleware('auth:admin');
@@ -52,4 +54,8 @@ Route::put('/konfirmasi-reservasi/{id}', [adminController::class, 'confirm_reser
 Route::get('/daftar-pembayaran', [adminController::class, 'daftar_pembayaran'])->middleware('auth:admin');
 Route::get('/detail-pembayaran/{id}', [adminController::class, 'detail_pembayaran'])->middleware('auth:admin');
 Route::put('/detail-pembayaran/{id}', [adminController::class, 'update_payment'])->middleware('auth:admin');
+Route::get('/data-user', [adminController::class, 'dataUser'])->middleware('auth:admin');
+
+Route::get('/data-user/edit/{id}', [adminController::class, 'editUser'])->middleware('auth:admin');
+Route::put('/data-user/edit/{id}', [adminController::class, 'updateUser'])->middleware('auth:admin');
 

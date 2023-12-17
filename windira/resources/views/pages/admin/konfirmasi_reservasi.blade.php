@@ -48,7 +48,7 @@
             </div>
             <!-- konten untuk tab ongoind -->
             <div class="tab-pane fade" id="ongoing">
-                @foreach($proses_reservasi as $pr)
+                @foreach($reservasi_berlangsung as $rb)
                 <div class="card mt-3 mb-4">
                 <div class="row no-gutters">
                     <div class="col-md-4">
@@ -56,14 +56,14 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h3 class="card-title">pemesanan {{$pr -> layanan}} - {{$pr -> booking_code}}</h3>
+                            <h3 class="card-title">pemesanan {{$rb -> layanan}} - {{$rb -> booking_code}}</h3>
                             <ul class="card-text no-bullet fs-5">
-                                <li>Destinasi: {{$pr -> keberangkatan}}</li>
-                                <li>Tanggal keberangkatan / checkin: {{ date('d F Y', strtotime($pr->keberangkatan_checkin)) }}</li>
-                                <li>Tanggal kepulangan / checkout: {{ date('d F Y', strtotime($pr->kepulangan_checkout)) }}</li>
+                                <li>Destinasi: {{$rb -> keberangkatan}}</li>
+                                <li>Tanggal keberangkatan / checkin: {{ date('d F Y', strtotime($rb->keberangkatan_checkin)) }}</li>
+                                <li>Tanggal kepulangan / checkout: {{ date('d F Y', strtotime($rb->kepulangan_checkout)) }}</li>
                             </ul>
                             <p class="text-danger">Silahkan lihat detail pemesanan.</p>
-                            <a href="/konfirmasi-reservasi/{{$pr -> id}}" class="btn btn-success">Lihat detail pemesanan</a>
+                            <a href="/konfirmasi-reservasi/{{$rb -> id}}" class="btn btn-success">Lihat detail pemesanan</a>
                         </div>
                     </div>
                 </div>
@@ -71,8 +71,28 @@
               @endforeach
             </div>
 
-            <div class="tab-pane fade" id="completed">
-                <!-- Konten untuk tab "Completed" -->
+           <div class="tab-pane fade" id="completed">
+                @foreach($reservasi_complete as $rc)
+                <div class="card mt-3 mb-4">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img class="card-img-top" src="{{url('asset/front-end/image/traveling.png')}}" alt="Card image">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h3 class="card-title">Pemesanan {{$rc -> layanan}} - {{$rc  -> booking_code}}</h3>
+                            <ul class="card-text no-bullet fs-5">
+                                <li>Destinasi: {{$rc -> keberangkatan}}</li>
+                                <li>Tanggal keberangkatan / checkin: {{ date('d F Y', strtotime($rc->keberangkatan_checkin)) }}</li>
+                                <li>Tanggal kepulangan / checkout: {{ date('d F Y', strtotime($rc->kepulangan_checkout)) }}</li>
+                            </ul>
+                            <p class="text-danger">Silahkan lihat tiket untuk mengecek status pembayaran.</p>
+                            <a href="/tiket/{{$rc -> id}}" class="btn btn-success">tiket pemesanan</a> 
+                        </div>
+                    </div>
+                </div>
+              </div>
+             @endforeach
             </div>
         </div>
 

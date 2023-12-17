@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="{{url('asset/front-end/css/style.css')}}">
 <body>
 
-
     @include('parts.navbar')
     @yield('content')
     @include('parts.footer')

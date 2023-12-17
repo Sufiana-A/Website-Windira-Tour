@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Payment;
 use App\Models\Reservation;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -19,7 +20,11 @@ class adminController extends Controller
         $reservasi_berlangsung = DB::table('reservations')
                             ->where('status', 'dikonfirmasi admin')
                             ->get();
-        return view('pages.admin.konfirmasi_reservasi', compact(['proses_reservasi', 'reservasi_berlangsung']));
+        $reservasi_complete = DB::table('reservations')
+                            ->where('status', 'dikonfirmasi admin')
+                            ->whereDate('reservations.kepulangan_checkout', '<', now())
+                            ->get();
+        return view('pages.admin.konfirmasi_reservasi', compact(['proses_reservasi', 'reservasi_berlangsung', 'reservasi_complete']));
     }
     public function detail_reservasi($id){
         $detail_konfirmasi_reservasi = Reservation::find($id);
@@ -66,6 +71,32 @@ class adminController extends Controller
             Session::flash('status', 'failed');
             Session::flash('message', 'Status pembayaran gagal diupdate');
             return redirect('/daftar-pembayaran');
+        }
+    }
+    public function dataUser(){
+        $dataUser = User::all();
+        return view('pages.admin.dataUser', compact(['dataUser']));
+    }
+    public function editUser($id){
+        $editUser = User::find($id);
+        return view('pages.admin.editUser', compact(['editUser']));
+    }
+    public function updateUser(Request $request, $id)
+    {
+        $editProfile = User::find($id);
+        $editProfile->update([
+            'nama_lengkap' => $request->nama_lengkap,
+            'email' => $request->email,
+            'nik' => $request->nik,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'alamat' => $request->alamat,
+            'jenis_kelamin' => $request->jenis_kelamin
+            
+        ]);
+        if ($editProfile) {
+            return redirect()->back()->with('success', 'Data user berhasil diperbarui.');
+        } else {
+            return redirect()->back()->with('error', 'Data user gagal diperbarui.');
         }
     }
 }

@@ -6,8 +6,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
 
+
+// logic
 class authController extends Controller
 {
     public function login(){
@@ -20,6 +21,7 @@ class authController extends Controller
     public function processStep1(Request $request)
     {
         // Simpan data ke dalam sesi atau variabel sementara
+        
         session(['username' => $request->input('username')]);
         session(['email' => $request->input('email')]);
 
@@ -47,9 +49,11 @@ class authController extends Controller
     public function processStep3(Request $request)
     {
         // Validasi input jika diperlukan
+        
         $request->validate([
             'password' => 'confirmed'
         ]);
+        // session = tempat simpan variabel sementara
 
         // Simpan data ke dalam sesi atau variabel sementara
         session(['password' => Hash::make($request->password)]);
@@ -78,17 +82,13 @@ class authController extends Controller
         ]);
         if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate();
- 
             return redirect()->intended('/');
-        }
+        } 
         if (Auth::guard('admin')->attempt($credentials)) {
             $request->session()->regenerate();
- 
             return redirect()->intended('/');
-        }
-        Session::flash('status', 'failed');
-        Session::flash('message', 'proses login gagal');
-        return redirect('/login');
+        } 
+        return redirect()->back()->with('error', 'Proses login gagal.');
     }   
     public function Logout(Request $request){
         Auth::logout();
