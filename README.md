@@ -105,6 +105,7 @@ php artisan migrate
 Jalankan server lokal Laravel:
 
 ```bash
+cd windira
 php artisan serve
 ```
 
