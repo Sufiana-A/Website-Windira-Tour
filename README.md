@@ -72,6 +72,7 @@ Clone repository:
 ```bash
 git clone https://github.com/Sufiana-A/Website-Windira-Tour.git
 cd Website-Windira-Tour
+cd windira
 ```
 
 Install dependencies:
